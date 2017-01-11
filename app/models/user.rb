@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
          has_many :orders
          def admin?
-           roll == "admin"
+           role == "admin"
          end
+
+         def user?
+           role == 'guest'
 end
