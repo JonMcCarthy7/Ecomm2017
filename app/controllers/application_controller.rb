@@ -8,9 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   def brands
-    @brands =Product.pluck(:brand).sort.uniq!
-
-    end
+    @brands = Product.pluck(:brand).sort.uniq!
+    if @brands == nil
+       @brands = Product.pluck(:brand).sort.uniq!
+     end
   end
 
 end
