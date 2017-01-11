@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :orders
+  resources :line_items
   get 'cart/add_to_cart'
 
   get 'cart/view_order'
