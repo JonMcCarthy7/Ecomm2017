@@ -10,7 +10,7 @@
                 </p>
                 <h3><%= product.name %></h3>
                 <p><%= number_to_currency product.price %></p>
-                <p><%= product.description %></p>
+                <p><%= product.description.truncate(100, separator: ' ') %></p>
                 <p>Made By: <%= product.brand %></p>
                 <p><%= link_to product.brand, branding_path(brand: product.brand)%></p>
                 <p><%= link_to product.category.name, categorical_path(cat_id: product.category_id) %></p>

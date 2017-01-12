@@ -21,7 +21,7 @@
         <td><%= product.name %></td>
         <td><%= number_to_currency product.price %></td>
         <td><%= product.quantity %></td>
-        <td><%= product.description %></td>
+        <td><%= product.description.truncate(27, separator: ' ') %></td>
         <td><%= product.brand %></td>
         <td><%= product.category.name %></td>
         <td><%= link_to 'Show', product %></td>
