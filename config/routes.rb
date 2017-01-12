@@ -8,6 +8,8 @@ resources :line_items
 
     get 'checkout' => 'cart#checkout'
 
+    post 'order_complete' => 'cart#order_complete'
+
   devise_for :users
     get 'categorical' => 'storefront#items_by_category'
 
