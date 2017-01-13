@@ -29,7 +29,7 @@
         </ul>
       </li>
       <!-- =============END CATEGORIES=========== -->
-<!-- Brands -->
+
 <!-- Brands -->
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands<span class="caret"></span></a>
@@ -37,16 +37,16 @@
     <% @brands.each do |brand| %>
       <li><%= link_to brand, branding_path(brand: brand) %></li>
     <% end %>
-      <li><a href="all">All</a></li>
+      <li><%= link_to "All", root_path %></li>
   </ul>
 </li>
 <!-- End Brands -->
 
       </ul>
     </li>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right nav-pills">
           <li><%= link_to current_user.email %></li>
-          <li><%= link_to "My Cart", view_order_path %></li>
+          <li><button type="button" class="btn"><%=link_to "My Cart", view_order_path%> <span class="badge"> <%= LineItem.count %></span></button></li> 
           <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         </ul>
