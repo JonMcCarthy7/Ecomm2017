@@ -13,13 +13,12 @@
                 <p><%= product.description.truncate(100, separator: ' ') %></p>
                 <p>Made By: <%= product.brand %></p>
                 <p><%= link_to product.brand, branding_path(brand: product.brand)%></p>
-                <p><%= link_to product.category.name, categorical_path(cat_id: product.category_id) %></p>
+                <p><%= link_to product.category&.name, categorical_path(cat_id: product.category_id) %></p>
 
 
                <p>
                <%= form_tag add_to_cart_path do %>
                  <%= hidden_field_tag :product_id, product.id %>
-                 <%= number_field_tag :quantity, nil, placeholder: "How many?" %>
                  <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
                <% end %>
 

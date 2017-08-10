@@ -35,7 +35,7 @@ end
 
 def order_complete
   LineItem.destroy_all
-  
+
  @order = Order.find(params[:order_id])
    @amount = (@order.grand_total.to_f.round(2) * 100).to_i
 
